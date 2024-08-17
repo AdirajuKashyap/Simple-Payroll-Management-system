@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: blanchedalmond;
+        }
+
+        header {
+            background-color: bisque;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: powderblue;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #adb5bd;
+        }
+
+        .sidebar {
+            background-color: beige;
+            color: #fff;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            padding-top: 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: bisque;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .about-section {
+            background-color: beige;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn {
+            display: block;
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 20px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: maroon;
+        }
+
+        .company-info {
+            background-color: beige;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-info h1,
+        .company-info h2 {
+            color: black;
+        }
+
+        .company-info p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome To The Payroll Management System of ABC's Company</h1>
+    </header>
+    <div class="navbar">
+        <a href="#" onclick="toggleSidebar()">☰ Menu</a>
+        <p > For More Click on menu </p>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="navbar">
+            <a href="#" onclick="toggleSidebar()">☰ Close</a>
+        </div>
+        <a href="Full_Employee_details.php">Employee Management/Full details</a>
+        <a href="insert_employee.html">Add Employee</a>
+        <a href="delete_employee.html">Remove an Employee</a>
+        <a href="Search_main.html">Search an employee using salary</a>
+        <a href="update_employee.html">Update/Modify Employee details</a>
+    </div>
+    <div class="content" id="content">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to our revolutionary payroll management website! We offer a seamless and efficient platform for managing employee compensation. Our user-friendly interface allows employers to effortlessly navigate various features, including adding, deleting, and searching for employee records.</p>
+            <p>With our comprehensive details section, employers can input and access crucial information about each employee, from basic personal details to salary structures and benefits. Our system ensures that all data is securely stored and easily retrievable, streamlining payroll processing and minimizing errors.</p>
+            <p>Adding and deleting employee records is simple with our intuitive interface. Employers can swiftly onboard new hires and remove departing employees, ensuring accurate payroll calculations.</p>
+            <p>Our robust search functionality empowers employers to quickly locate specific employee records based on various criteria, saving time and eliminating manual effort.</p>
+        </div>
+        <div class="company-info">
+            <h1>Payroll Management System</h1>
+    
+            <h2>Key Features:</h2>
+            <ol>
+                <li>Employee Database: Maintain a comprehensive database of employee information.</li>
+                <li>Payroll Processing: Automate wage calculation and deductions.</li>
+                <li>Tax Compliance: Ensure compliance with tax regulations.</li>
+                <li>Direct Deposit and Payments: Enable electronic payments.</li>
+                <li>Reporting and Analytics: Generate customizable reports and analytics.</li>
+                <li>Employee Self-Service: Empower employees with self-service portals.</li>
+                <li>Integration Capabilities: Seamlessly integrate with other systems.</li>
+            </ol>
+        
+            <h1>About Our Company</h1>
+            
+            <h2>Company Name: Kashyap's Company</h2>
+            <p><strong>Mission Statement:</strong> At Kashyap's Company, we are dedicated to simplifying payroll management for businesses of all sizes. Our mission is to provide innovative software solutions that automate payroll processes, enhance efficiency, and ensure compliance, allowing our clients to focus on their core business objectives.</p>
+        
+            <h2>Core Values:</h2>
+            <ul>
+                <li><strong>Excellence:</strong> We strive for excellence in everything we do.</li>
+                <li><strong>Integrity:</strong> We conduct business with honesty and transparency.</li>
+                <li><strong>Innovation:</strong> We embrace innovation and continuously seek new ways to improve.</li>
+                <li><strong>Customer Success:</strong> We are committed to the success of our clients.</li>
+                <li><strong>Team Collaboration:</strong> We value collaboration, diversity, and teamwork.</li>
+            </ul>
+        
+            <h2>Services Offered:</h2>
+            <ul>
+                <li>Payroll Management Software</li>
+                <li>Tax Filing and Compliance Services</li>
+                <li>HR and Benefits Administration</li>
+                <li>Time and Attendance Tracking</li>
+                <li>Employee Self-Service Portals</li>
+                <li>Customized Reporting and Analytics</li>
+            </ul>
+        
+            <h2>Why Choose Kashyap's Company?</h2>
+            <ul>
+                <li>User-friendly interface</li>
+                <li>Comprehensive features</li>
+                <li>Reliable customer support</li>
+                <li>Affordable pricing plans</li>
+                <li>Flexible customization options</li>
+            </ul>
+        
+            <h2>Contact Information:</h2>
+            <p><strong>Email:</strong> info@kashyapscompany.com</p>
+            <p><strong>Phone:</strong> 1-800-555-1234</p>
+            <p><strong>Address:</strong> 123 Main Street, City, State, ZIP</p>
+        </div>
+    </div>
+    <a class="logout-btn" href="logout.php">Logout</a>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.classList.add("open");
+                content.style.marginLeft = "200px";
+            }
+        }
+    </script>
+</body>
+</html>

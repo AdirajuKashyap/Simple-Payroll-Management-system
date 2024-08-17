@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: blanchedalmond; /* changed background color */
+            font-family: "Roboto", sans-serif;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden; /* prevent overflow */
+            border-radius: 20px; /* added border radius */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* added box shadow */
+        }
+
+        .bg {
+            flex: 1;
+            background-image: url('Loginpage.jpg');
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 20px; /* added border radius */
+            border-bottom-left-radius: 20px; /* added border radius */
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            background-color: floralwhite; /* changed background color */
+            border-top-right-radius: 20px; /* added border radius */
+            border-bottom-right-radius: 20px; /* added border radius */
+        }
+
+        .form-wrapper {
+            max-width: 380px; /* changed width */
+            margin: 0 auto;
+            padding: 30px; /* adjusted padding */
+            text-align: center;
+        }
+
+        .form-wrapper h1 {
+            font-size: 32px; /* adjusted font size */
+            font-weight: 600;
+            color: #5372F0;
+            margin-bottom: 20px; /* adjusted margin */
+        }
+
+        form .field {
+            position: relative;
+            margin-bottom: 25px; /* adjusted margin */
+        }
+
+        form .field .input-area {
+            position: relative;
+            border-bottom: 2px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        form input {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            font-size: 16px; /* adjusted font size */
+            border: none;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus,
+        form input:valid {
+            border-color: #5372F0;
+        }
+
+        .field .input-area i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f3b75d;
+            transition: color 0.3s ease;
+        }
+
+        form input:focus ~ .icon,
+        form input:valid ~ .icon {
+            color: #5372F0;
+        }
+
+        form input::placeholder {
+            color: #ccc;
+            font-size: 16px; /* adjusted font size */
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: #5372F0;
+        }
+
+        .pass-txt {
+            margin-top: 15px; /* adjusted margin */
+            font-size: 14px; /* adjusted font size */
+            color: #888; /* changed color */
+        }
+
+        .pass-txt a {
+            color: #5372F0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .pass-txt a:hover {
+            color: #0d38e8;
+        }
+
+        form input[type="submit"] {
+            height: 50px;
+            color: #fff;
+            background: #5372F0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 16px; /* adjusted font size */
+        }
+
+        form input[type="submit"]:hover {
+            background: #2c52ed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bg"></div>
+        <div class="form-container">
+            <div class="form-wrapper">
+                <h1>Welcome!</h1>
+                <form action="login.php" method="POST" id="loginForm">
+                    <div class="field">
+                        <div class="input-area">
+                            <input type="text" id="Userid" name="Userid" placeholder="Username" required>
+                            <i class="icon fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="input-area">
+                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <i class="icon fa fa-lock"></i>
+                            <span class="toggle-password fa fa-eye"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+                <div class="pass-txt">
+                    <a href="password_error.html">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordField = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

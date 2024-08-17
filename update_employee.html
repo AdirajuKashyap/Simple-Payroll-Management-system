@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        button {
+            width: 48%;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 2%;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-container button:last-child {
+            margin-right: 0;
+        }
+
+        .btn-container button:nth-child(3) {
+            background-color: #2196F3;
+        }
+
+        .btn-container button:nth-child(3):hover {
+            background-color: #0b7dda;
+        }
+
+        .btn-container button:nth-child(4) {
+            background-color: #f44336;
+        }
+
+        .btn-container button:nth-child(4):hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Employee Details</h2>
+        <form action="update_employee.php" method="post">
+            <label for="employee_id">Employee ID:</label>
+            <input type="text" id="employee_id" name="employee_id" required>
+
+            <label for="new_fname">New First Name:</label>
+            <input type="text" id="new_fname" name="new_fname">
+
+            <label for="new_lname">New Last Name:</label>
+            <input type="text" id="new_lname" name="new_lname">
+
+            <label for="new_age">New Age:</label>
+            <input type="number" id="new_age" name="new_age">
+
+            <label for="new_phone">New Phone Number:</label>
+            <input type="text" id="new_phone" name="new_phone">
+
+            <label for="new_address">New Address:</label>
+            <input type="text" id="new_address" name="new_address">
+
+            <label for="new_designation">New Designation:</label>
+            <input type="text" id="new_designation" name="new_designation">
+
+            <label for="new_salary">New Salary:</label>
+            <input type="text" id="new_salary" name="new_salary">
+
+            <label for="new_joining_date">New Joining Date:</label>
+            <input type="date" id="new_joining_date" name="new_joining_date">
+
+            <label for="new_bank_name">New Bank Name:</label>
+            <input type="text" id="new_bank_name" name="new_bank_name">
+
+            <label for="new_account_number">New Account Number:</label>
+            <input type="text" id="new_account_number" name="new_account_number">
+
+            <label for="new_ifsc_code">New IFSC Code:</label>
+            <input type="text" id="new_ifsc_code" name="new_ifsc_code">
+
+            <div class="btn-container">
+                <input type="submit" value="Update">
+                <button type="button" onclick="resetForm()">Reset</button>
+                <button onclick="window.location.href='Full_Employee_details.php'">View All Employees</button>
+                <button onclick="window.location.href='home.html'">Back</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function resetForm() {
+            document.getElementById("employee_id").value = "";
+            document.getElementById("new_fname").value = "";
+            document.getElementById("new_lname").value = "";
+            document.getElementById("new_age").value = "";
+            document.getElementById("new_phone").value = "";
+            document.getElementById("new_address").value = "";
+            document.getElementById("new_designation").value = "";
+            document.getElementById("new_salary").value = "";
+            document.getElementById("new_joining_date").value = "";
+            document.getElementById("new_bank_name").value = "";
+            document.getElementById("new_account_number").value = "";
+            document.getElementById("new_ifsc_code").value = "";
+        }
+    </script>
+</body>
+</html>

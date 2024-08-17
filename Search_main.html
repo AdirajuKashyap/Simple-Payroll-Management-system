@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: blanchedalmond;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .image {
+            flex: 1;
+            background-image: url('search.jpg');
+            background-size: cover;
+            background-position: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            height: 300px; /* Adjust height as needed */
+        }
+        .text {
+            flex: 1;
+            padding: 0 20px; /* Added padding for spacing */
+        }
+        h1 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+            color: #777;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+        }
+        a:hover {
+            color: grey;
+        }
+        .back-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>Employee Search</h1>
+            <p>Search by:</p>
+            <p><a href="SearchByName.php">Name</a></p>
+            <p><a href="SearchByID.php">Employee ID</a></p>
+            <p><a href="SearchByAge.php">Age</a></p>
+            <p><a href="SearchBySalary.php">Salary</a></p>
+            <p><a href="SearchByPhone.php">Phone Number</a></p>
+            <button class="back-button" onclick="window.location.href='home.html'">Back</button>
+        </div>
+        <div class="image"></div>
+    </div>
+</body>
+</html>
